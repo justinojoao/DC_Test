@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\VendaController;
+use App\Models\Venda;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [VendaController::class, 'index']);
 Route::get('/vendas/create', [VendaController::class, 'create'])->middleware('auth');
+Route::get('dashboard', [VendaController::class, 'dashboard'])->middleware('auth');
 Route::get('/vendas/{id}', [VendaController::class, 'show']);
 Route::post('/vendas',[VendaController::class, 'store']);
-
-Route::get('dashboard', [VendaController::class, 'dashboard'])->middleware('auth');
+Route::delete('vendas/{id}',[VendaController::class, 'destroy'])->middleware('auth');
 

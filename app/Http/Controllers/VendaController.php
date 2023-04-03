@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Venda;
 use App\Models\User;
+use Illuminate\Console\Scheduling\Event;
 
 class VendaController extends Controller
 {
@@ -32,21 +33,22 @@ class VendaController extends Controller
 
     public function store(Request $request) {
 
-         $venda = new Venda;
+        $venda = new Venda;
 
          $venda->date = $request->date;
          $venda->vendedor = $request->vendedor ;
          $venda->cliente = $request->cliente ;
          $venda->description = $request->description ;
-         $venda->valor = $request->valor ;
-         $venda->parcelas = $request->parcelas;
+         $venda->valor = $request->valor;
+         $venda->pagamento = $request->pagamento;
 
          $user = auth()->user();
          $venda->user_id = $user->id;
 
          $venda->save();
 
-         return redirect('/');
+         return redirect ('/');
+
     }
 
     public function show($id) {
@@ -66,6 +68,14 @@ class VendaController extends Controller
         $vendas = $user->vendas;
 
         return view('vendas.dashboard', ['vendas' => $vendas]);
+    }
+
+    public function destroy($id) {
+
+        Venda::findOrFail($id)->delete();
+
+        return redirect('/dashboard');
+
     }
 
 }

@@ -9,6 +9,10 @@ class Venda extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        //
+    ];
+
     protected $dates = ['date'];
 
     public function user(){

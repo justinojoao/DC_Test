@@ -6,7 +6,7 @@
 
     <div id="venda-create-container" class="col-md-6 offset-md-4">
         <h1>Finalização de pedidos</h1>
-        <form action="/vendas" method="post">
+        <form action="/vendas" method="POST">
             @csrf
             <div class="form-group">
                 <label for="date">Data da Venda:</label>
@@ -21,7 +21,7 @@
             <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Cliente">
             </div>
             <div class="form-group">
-                <label for="title">description:</label>
+                <label for="title">Produtos:</label>
                 <input type="text" class="form-control" id="description" name="description" placeholder="Produtos">
             </div>
             <div class="form-group">
@@ -30,24 +30,17 @@
             </div>
             <div class="form-group">
             <label for="title">Forma de Pagamento </label>
-            <select name="parcelas" id="parcelas"class="form-control">
-                <option value="1">A Vista</option>
-                <option value="2">2 Vezes</option>
-                <option value="3">3 Vezes</option>
-                <option value="4">4 Vezes</option>
-                <option value="5">5 Vezes</option>
-                <option value="6">6 Vezes</option>
-                <option value="7">7 Vezes</option>
-                <option value="8">8 Vezes</option>
-                <option value="9">9 Vezes</option>
-                <option value="10">10 Vezes</option>
-                <option value="11">11 Vezes</option>
-                <option value="12">12 Vezes</option>
+            <select  name="pagamento" id="parcelas"class="form-control">
+                <option value="A Vista">A Vista</option>
+                <option value="Cartão de crédito">Cartão de crédito</option>
             </select>
             </div>
-            <a href="/" class="btn btn-primary" id="event-submit">Cancelar</a>
-            <input type="submit" class="btn btn-primary" name="enviar" value="Gerar Parcelas">
+
+            <a href="/"class="btn btn-primary" id="event-submit">Cancelar</a>
+
+            <input type="submit" id="myAnchor" class="btn btn-primary" name="enviar" value="Finalizar venda">
         </form>
+
         </div>
     </div>
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('cliente');
             $table->text('description');
             $table->float('valor');
-            $table->integer('parcelas');
+            $table->string('pagamento');
             $table->timestamps();
         });
     }
