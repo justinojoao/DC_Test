@@ -16,7 +16,7 @@
                     <th scope="col"> Cliente</th>
                     <th scope="col"> Description</th>
                     <th scope="col"> Valor</th>
-                    <th scope="col"> parcelas</th>
+                    <th scope="col"> Pagamento</th>
                 </tr>
             </thead>
         </table>

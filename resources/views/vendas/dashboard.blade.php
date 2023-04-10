@@ -17,7 +17,7 @@
                     <th scope="col"> Cliente</th>
                     <th scope="col"> Description</th>
                     <th scope="col"> Valor</th>
-                    <th scope="col"> parcelas</th>
+                    <th scope="col"> Pagamento</th>
                     <th scope="col"> Ações</th>
                 </tr>
             </thead>
@@ -29,6 +29,7 @@
                         <td>{{$venda->cliente}}</td>
                         <td>{{$venda->description}}</td>
                         <td>{{$venda->valor}}</td>
+                        <td>{{$venda->pagamento}}</td>
                         <td>
                             <a href="#" class="btn"> Editar</a>
                             <form action="/vendas/{{$venda->id}}" method="POST">
